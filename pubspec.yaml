@@ -39,6 +39,11 @@ dependencies:
   flutter_svg: ^2.0.10+1
   local_auth: ^2.3.0
   pinput: ^5.0.0
+  internet_connection_checker_plus: ^2.5.1
+  record: ^5.1.2
+  just_audio: ^0.9.39
+  path_provider: ^2.1.4
+  path: ^1.9.0
 
 dev_dependencies:
   flutter_test:

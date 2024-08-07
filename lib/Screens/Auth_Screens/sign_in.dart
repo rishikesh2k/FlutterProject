@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/Screens/Auth_Screens/check_internet_connection.dart';
 import 'package:my_app/Screens/Auth_Screens/local_auth.dart';
 import 'package:my_app/Utils/constant_text.dart';
 import 'package:my_app/Utils/font_text_style.dart';
@@ -139,29 +140,38 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
               ),
               const SizedBox(height: 50),
-              Container(
-                width: double.infinity,
-                height: 54,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.white.withOpacity(0.8),
-                      offset: const Offset(-5, -5),
-                      blurRadius: 4,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CheckInternetConnection(),
+                      ));
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 54,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.white.withOpacity(0.8),
+                        offset: const Offset(-5, -5),
+                        blurRadius: 4,
+                      ),
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.8),
+                        offset: const Offset(5, 5),
+                        blurRadius: 4,
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Center(
+                    child: Text(
+                      ConstantText.signIn,
+                      style: FontTextStyle.signInTextStyle,
                     ),
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.8),
-                      offset: const Offset(5, 5),
-                      blurRadius: 4,
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Center(
-                  child: Text(
-                    ConstantText.signIn,
-                    style: FontTextStyle.signInTextStyle,
                   ),
                 ),
               ),

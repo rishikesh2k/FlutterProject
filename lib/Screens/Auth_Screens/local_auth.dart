@@ -72,7 +72,9 @@ class _LocalAuthState extends State<LocalAuth> {
           });
         }
       },
-      child: isAuthenticated ? Icon(Icons.lock) : Icon(Icons.lock_open),
+      child: isAuthenticated
+          ? const Icon(Icons.lock)
+          : const Icon(Icons.lock_open),
     );
   }
 }
